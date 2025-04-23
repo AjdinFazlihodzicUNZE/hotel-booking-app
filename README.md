@@ -1,7 +1,7 @@
 # Hotel Booking App
 
 ## 🧠 Tema
-Web aplikacija za rezervaciju hotela, s ulogama Admin i Guest, s registracijom i kontakt formom.
+Web aplikacija za rezervaciju hotela.
 
 ## 🛠️ Korištene tehnologije
 - React.js
