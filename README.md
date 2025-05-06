@@ -26,8 +26,8 @@ git clone <repository-link>
 cd HOTEL-BOOKING-APP
 Install dependencies
 npm install
-# Start backend (in one terminal)
+### Start backend (in one terminal)
 nodemon server.js
-# Start frontend (in another terminal)
+### Start frontend (in another terminal)
 npm start
 
