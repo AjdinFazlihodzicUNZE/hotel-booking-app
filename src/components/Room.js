@@ -1,7 +1,11 @@
 import React,{useState} from 'react'
 import './Room.css';
 import { Modal, Button, Carousel } from 'react-bootstrap';
+<<<<<<< HEAD
 
+=======
+import {Link} from 'react-router-dom';
+>>>>>>> ajdin-branch
 function Room ({room}) {
     const [show, setShow] = useState(false);
 
@@ -22,14 +26,24 @@ function Room ({room}) {
                 </b>
 
                 <div className="btn-holder">
+<<<<<<< HEAD
+=======
+                <Link to={`/book/${room._id}`}>
+                <button className="btn btn-primary m-3">Book now</button>
+                </Link>
+>>>>>>> ajdin-branch
                     <button className="btn btn-primary" onClick={handleShow}>View Details</button>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 
         
 
       <Modal show={show} onHide={handleClose} size='lg'>
+=======
+        <Modal show={show} onHide={handleClose} size='lg'>
+>>>>>>> ajdin-branch
         <Modal.Header>
           <Modal.Title>{room.name}</Modal.Title>
         </Modal.Header>
