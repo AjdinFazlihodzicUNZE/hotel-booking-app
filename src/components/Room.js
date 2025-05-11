@@ -23,10 +23,10 @@ function Room ({room}) {
 
                 <div className="btn-holder">
                 <Link to={`/book/${room._id}`}>
-                <button className="btn btn-primary m-3">Book now</button>
+                  <button className="btn-luxury m-3">Book now</button>
                 </Link>
-                    <button className="btn btn-primary" onClick={handleShow}>View Details</button>
-                </div>
+                <button className="btn-luxury" onClick={handleShow}>View Details</button>
+              </div>
             </div>
         </div>
         <Modal show={show} onHide={handleClose} size='lg'>
@@ -47,10 +47,10 @@ function Room ({room}) {
       })}
       
         </Carousel>
-        <p>{room.description}</p>
+        <p className="room-description">{room.description}</p>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleClose} className="luxury-button">
             Close
           </Button>
           
