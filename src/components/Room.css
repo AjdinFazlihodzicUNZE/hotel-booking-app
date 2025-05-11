@@ -25,3 +25,7 @@ h1{
     margin-top: 20px;
     padding: 20px;
 }
+.bigimg{
+    height: 400px;
+    border-radius: 5px !important;
+}
