@@ -36,7 +36,7 @@ function Homescreen() {
 ) : rooms.length > 0 ? (
   rooms.map(room => {
     return (
-      <div className="col-md-9 mt-2" key={room.id}>
+      <div className="col-md-9 mt-2" key={room._id}>
         <Room room={room} />
       </div>
     );
