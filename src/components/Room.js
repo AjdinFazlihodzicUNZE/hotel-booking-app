@@ -34,7 +34,7 @@ function Room ({room}) {
           <Modal.Title>{room.name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <Carousel prevLabel='' nextLavel=''>
+        <Carousel prevLabel='' nextLabel=''>
       
       {room.imageurls.map(url=>{
         return <Carousel.Item>
