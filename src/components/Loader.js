@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HashLoader } from "react-spinners";
+import { RingLoader } from "react-spinners";
 
 function Loader() {
   const [loading] = useState(true);
@@ -7,7 +7,7 @@ function Loader() {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '100px' }}>
-      <HashLoader
+      <RingLoader
         color={color}
         loading={loading}
         size={80}
