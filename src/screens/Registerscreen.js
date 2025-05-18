@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Registerscreen() {
     const[name, setname]=useState('')
@@ -6,7 +7,7 @@ function Registerscreen() {
     const[password, setpassword]=useState('')
     const[cpassword, setcpassword]=useState('')
 
-    function register(){
+     async function register(){
         if(password==cpassword){
             const user={
                 name,
@@ -14,7 +15,13 @@ function Registerscreen() {
                 password,
                 cpassword
             }
-            console.log(user)
+
+            try {
+                const result = await axios.post('/api/users/register', user).data
+
+            } catch (error) {
+                console.log(error)
+            }
         }else{
             alert("Password not matched")
         }
