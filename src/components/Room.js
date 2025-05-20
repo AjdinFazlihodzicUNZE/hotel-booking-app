@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './Room.css';
 import { Modal, Button, Carousel } from 'react-bootstrap';
-
+import {Link} from 'react-router-dom';
 function Room ({room}) {
     const [show, setShow] = useState(false);
 
@@ -22,19 +22,19 @@ function Room ({room}) {
                 </b>
 
                 <div className="btn-holder">
-                    <button className="btn btn-primary" onClick={handleShow}>View Details</button>
-                </div>
+                <Link to={`/book/${room._id}`}>
+                  <button className="btn-luxury m-3">Book now</button>
+                </Link>
+                <button className="btn-luxury" onClick={handleShow}>View Details</button>
+              </div>
             </div>
         </div>
-
-        
-
-      <Modal show={show} onHide={handleClose} size='lg'>
+        <Modal show={show} onHide={handleClose} size='lg'>
         <Modal.Header>
           <Modal.Title>{room.name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <Carousel prevLabel='' nextLavel=''>
+        <Carousel prevLabel='' nextLabel=''>
       
       {room.imageurls.map(url=>{
         return <Carousel.Item>
@@ -47,10 +47,10 @@ function Room ({room}) {
       })}
       
         </Carousel>
-        <p>{room.description}</p>
+        <p className="room-description">{room.description}</p>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleClose} className="luxury-button">
             Close
           </Button>
           
