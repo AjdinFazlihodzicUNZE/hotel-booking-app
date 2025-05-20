@@ -33,16 +33,16 @@ function Navbar() {
                             </li>
                         ) : (<>
                             <li className="nav-item">
-                                <a className="nav-link" href="/about-us">O nama</a>
+                                <a className="nav-link" href="/about-us">About Us</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/contact">Kontakt</a>
+                                <a className="nav-link" href="/contact">Contact</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/login">Prijava</a>
+                                <a className="nav-link" href="/login">Log in</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/register">Registracija</a>
+                                <a className="nav-link" href="/register">Sign up</a>
                             </li>
 
                         </>)}
