@@ -48,8 +48,6 @@ function Bookingscreen({match}) {
               <hr />
               <b>
                 <p>Name : </p>
-                <p>From Date : </p>
-                <p>To Date : </p>
                 <p>Max Count : {room.maxcount}</p>
               </b>
               </div>
@@ -57,7 +55,7 @@ function Bookingscreen({match}) {
               <b>
               <h1>Amount</h1>
               <hr />
-              <p>Total days : </p>
+              <p>Date : </p>
               <p>Rent per day : {room.rentperday}</p>
               <p>Total Amount : </p></b>
               </div>
