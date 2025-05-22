@@ -1,25 +1,24 @@
 .contact-container {
   background-color: #fffdf8;
-  border: 1px solid #d4af37;
-  padding: 40px;
-  border-radius: 10px;
-  max-width: 700px;
-  margin: 50px auto;
-  color: white;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+  padding: 40px; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  max-width: 800px;
+  margin: 40px auto; 
+  text-align: center; 
 }
 
 .contact-container h1 {
-  color: white;
-  margin-bottom: 20px;
-  font-size: 2rem;
+  color: #8b6508; 
+  font-size: 28px;
+  margin-bottom: 15px; 
 }
 
 .contact-container p {
-  font-size: 1.1rem;
-  color: #ccc;
+  color: #8b6508;
+  font-size: 18px;
   margin-bottom: 30px;
+  line-height: 1.6;
 }
 
 .contact-form {
@@ -30,27 +29,46 @@
 
 .contact-form input,
 .contact-form textarea {
-  padding: 12px;
-  background-color: #1e1e1e;
-  color: #fff;
+  border: 1px solid #d4af37;
   border-radius: 8px;
-  font-size: 1rem;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.3s ease;
 }
 
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #bfa06a;
+  outline: none;
+}
 .contact-form button {
-    background-color: #bfa06a;
+  background-color: #bfa06a; 
+  color: white; 
+  padding: 12px 20px; 
+    border: none;
     border: none;
     color: white;
     font-weight: 600;
     padding: 10px 20px;
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    width: fit-content;
+  border: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+  border-radius: 30px; 
+  font-size: 16px; 
+  font-weight: 600; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: #d4af37;
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  background-color: #d4af37;
+  transform: scale(1.05);
+
+}
+
+.contact-form button:active {
+  transform: scale(0.95);
 }

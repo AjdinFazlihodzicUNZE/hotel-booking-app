@@ -2,3 +2,45 @@
     padding-left: 30px;
     padding-right: 30px;
 }
+.navbar {
+    background-color: #fffdf8;
+    border-bottom: 1px solid #d4af37;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .navbar-brand {
+    color: #8b6508;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #8b6508;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #bfa06a;
+}
+.navbar .dropdown-menu {
+    background-color: #ffffff; 
+    border: 1px solid #d4af37;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+    color: #8b6508;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+    background-color: #f8f8f8;
+    color: #d4af37;
+}
+
+.navbar .navbar-toggler {
+    border-color: #d4af37;
+}
+
+.navbar .navbar-toggler .navbar-toggler-icon {
+    background-color: #d4af37;
+}
