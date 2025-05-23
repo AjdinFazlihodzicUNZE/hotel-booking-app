@@ -3,9 +3,9 @@ import './Navbar.css';
 
 function Navbar() {
     const user = JSON.parse(localStorage.getItem('currentUser'));
-    function logout(){
+    function logout() {
         localStorage.removeItem('currentUser')
-        window.location.href="/login"
+        window.location.href = "/login"
     }
     return (
         <div>
@@ -16,11 +16,17 @@ function Navbar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
-
+                        <li className="nav-item">
+                            <a className="nav-link" href="/about-us">About Us</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/contact">Contact</a>
+                        </li>
                         {user ? (
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a className="nav-link" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     {user.name}
+                                    <span className="custom-arrow">&#9662;</span>
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="userMenu">
                                     <li>
@@ -32,12 +38,7 @@ function Navbar() {
                                 </ul>
                             </li>
                         ) : (<>
-                            <li className="nav-item">
-                                <a className="nav-link" href="/about-us">About Us</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="/contact">Contact</a>
-                            </li>
+
                             <li className="nav-item">
                                 <a className="nav-link" href="/login">Log in</a>
                             </li>
