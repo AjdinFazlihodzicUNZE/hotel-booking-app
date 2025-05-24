@@ -59,7 +59,13 @@ function Bookingscreen({ match }) {
             <div className='col-md-6'>
               <h1>{room.name}</h1>
               <img src={room.imageurls[0]} className='bigimg' />
+              <b>
+                <p>Max count: {room.maxcount}</p>
+                <p>Phone Number: {room.phonenumber}</p>
+                <p>Type: {room.type}</p>
+                </b>
             </div>
+
 
             <div className='col-md-6'>
               <div style={{ textAlign: 'right' }}>
@@ -96,7 +102,7 @@ function Bookingscreen({ match }) {
               </div>
 
               <div style={{ float: 'right' }}>
-                <button className='btn btn-luxury' onClick={bookRoom}>Pay Now</button>
+                <button className='btn btn-luxury mt-2' onClick={bookRoom}>Pay Now</button>
               </div>
 
             </div>
