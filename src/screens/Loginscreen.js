@@ -40,8 +40,8 @@ function Loginscreen() {
 
                     <div className='shadowbox'>
                         <h2>Login</h2>
-                        <input type="text" className='form-control' placeholder='email' value={email} onChange={(e) => { setemail(e.target.value) }} />
-                        <input type="password" className='form-control' placeholder='password' value={password} onChange={(e) => { setpassword(e.target.value) }} />
+                        <input type="text" className='form-control' placeholder='Email' value={email} onChange={(e) => { setemail(e.target.value) }} />
+                        <input type="password" className='form-control' placeholder='Password' value={password} onChange={(e) => { setpassword(e.target.value) }} />
                         <button className='btn luxury-button mt-3' onClick={Login}>Login</button>
                         <div className="text-center mt-3">
                             <p>

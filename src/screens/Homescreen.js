@@ -3,6 +3,7 @@ import axios from 'axios';
 import Room from '../components/Room'
 import Loader from '../components/Loader';
 import Error from '../components/Error';
+import Featurecard from '../components/Featurecard';
 
 
 function Homescreen() {
@@ -27,6 +28,29 @@ function Homescreen() {
         fetchData();
     }, []);
 
+       const features = [
+     {
+          title: 'Restaurant',
+          image: '/restaurant.jpg',
+          description: 'Enjoy exquisite dishes and a cozy atmosphere.'
+     },
+    {
+         title: 'Spa Center',
+         image: '/spa.jpg',
+         description: 'Relax and rejuvenate in our world-class spa.'
+    },
+    {
+        title: "Gym",
+        image: '/gym.jpg',
+        description: 'Stay fit with our fully equipped gym.'
+    },
+    {
+        title: "Outdoor Swimming Pool",
+        image: '/pool.jpg',
+        description: 'Take a refreshing dip in our beautiful outdoor swimming pool, surrounded by lush gardens and sunshine.'
+    }
+  
+  ];
 
     return (
         <div className="container">
@@ -34,6 +58,18 @@ function Homescreen() {
               <h1 className="welcome-text">Welcome</h1>
             </div>
             <div className="row justify-content-center mt-5">
+              <div className="feature-cards-container mt-4 d-flex justify-content-center flex-wrap">
+             {features.map((feature, index) => (
+               <Featurecard 
+                  key={index}
+                  title={feature.title}
+                  image={feature.image}
+                  description={feature.description}
+              />
+              
+            ))}
+             </div>
+
             {loading ? (
   <Loader />
 ) : rooms.length > 0 ? (
