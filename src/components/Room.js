@@ -9,7 +9,9 @@ function Room ({room}) {
   const handleShow = () => setShow(true);
   return (
     <div>
+      
         <div className="row shadowbox" >
+          
             <div className="col-md-4">
                 <img src={room.imageurls[0]} className="smallimg" />
             </div>

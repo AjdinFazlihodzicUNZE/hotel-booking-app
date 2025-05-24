@@ -30,6 +30,9 @@ function Homescreen() {
 
     return (
         <div className="container">
+          <div>
+              <h1 className="welcome-text">Welcome</h1>
+            </div>
             <div className="row justify-content-center mt-5">
             {loading ? (
   <Loader />
