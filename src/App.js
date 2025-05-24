@@ -1,28 +1,36 @@
 
 import './App.css';
 import Navbar from './components/Navbar';
-import {BrowserRouter, Route, Routes , Link} from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Homescreen from './screens/Homescreen';
 import Bookingscreen from './screens/Bookingscreen';
 import Registerscreen from './screens/Registerscreen';
 import Loginscreen from './screens/Loginscreen';
 import Contactscreen from './screens/Contactscreen';
+import Footer from './components/Footer';
+
+
+
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
       <div className="background-image"></div>
       <div className="page-content">
-      <Navbar/>
-      <BrowserRouter>
+     <Navbar />
+     <div className="page-body">
         <Routes>
-          <Route path="/home" element= {<Homescreen />} />
-          <Route path='/book/:roomid' element = {<Bookingscreen />}/>
-          <Route path='/register' exact Component={Registerscreen}/>
-          <Route path='/login' exact Component={Loginscreen}/>
-          <Route path='/contact' exact Component={Contactscreen}/>
+           <Route path="/" element={<Navigate to="/home" replace />} />
+           <Route path="/home" element={<Homescreen />} />
+           <Route path='/book/:roomid' element={<Bookingscreen />} />
+           <Route path='/register' exact Component={Registerscreen} />
+           <Route path='/login' exact Component={Loginscreen} />
+           <Route path='/contact' exact Component={Contactscreen} />
         </Routes>
-      </BrowserRouter>
     </div>
+    <Footer />
+      </div>
+     </BrowserRouter>
     </div>
   );
 }

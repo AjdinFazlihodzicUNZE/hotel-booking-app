@@ -1,0 +1,30 @@
+.custom-footer {
+  background-color: #fffdf8;
+  border-top: 1px solid #d4af37;
+  color: #8b6508;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 50px;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.custom-footer .heart {
+  color: #d4af37;
+  font-weight: bold;
+}
+.contact-info {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #8b6508;
+  line-height: 1.5;
+}
+
+.contact-info p {
+  margin: 5px 0;
+}

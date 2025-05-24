@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navbar.css';
 
+
 function Navbar() {
     const user = JSON.parse(localStorage.getItem('currentUser'));
     function logout() {
@@ -10,7 +11,7 @@ function Navbar() {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="#">Hotel Royale</a>
+                <a className="navbar-brand" href="/home">Hotel Royale</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -25,12 +26,12 @@ function Navbar() {
                         {user ? (
                             <li className="nav-item dropdown">
                                 <a className="nav-link" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {user.name}
+                                    Profile
                                     <span className="custom-arrow">&#9662;</span>
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="userMenu">
                                     <li>
-                                        <a className="dropdown-item" href="/booking">Booking</a>
+                                        <a className="dropdown-item" href="/home">Booking</a>
                                     </li>
                                     <li>
                                         <a className="dropdown-item" href="#" onClick={logout}>Log out</a>
