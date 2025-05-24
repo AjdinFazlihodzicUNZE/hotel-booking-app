@@ -7,6 +7,7 @@ import Bookingscreen from './screens/Bookingscreen';
 import Registerscreen from './screens/Registerscreen';
 import Loginscreen from './screens/Loginscreen';
 import Contactscreen from './screens/Contactscreen';
+import Cloudcomputing from './screens/Cloudcomputing';
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
       <Navbar/>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Cloudcomputing />} />
           <Route path="/home" element= {<Homescreen />} />
           <Route path='/book/:roomid' element = {<Bookingscreen />}/>
           <Route path='/register' exact Component={Registerscreen}/>
