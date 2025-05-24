@@ -8,6 +8,7 @@ import Registerscreen from './screens/Registerscreen';
 import Loginscreen from './screens/Loginscreen';
 import Contactscreen from './screens/Contactscreen';
 import Footer from './components/Footer';
+import AboutUsscreen from './screens/AboutUsscreen';
 
 
 
@@ -26,6 +27,7 @@ function App() {
            <Route path='/register' exact Component={Registerscreen} />
            <Route path='/login' exact Component={Loginscreen} />
            <Route path='/contact' exact Component={Contactscreen} />
+           <Route path='/about-us' exact Component={AboutUsscreen}/>
         </Routes>
     </div>
     <Footer />

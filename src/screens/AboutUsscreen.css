@@ -1,0 +1,128 @@
+.about-container {
+    padding: 40px;
+    max-width: 1000px;
+    margin: 40px auto;
+    text-align: center;
+    color: white;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  
+.about-container h1 {
+    color: #8b6508;
+    font-size: 36px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.about-container p {
+    color: #8b6508;
+    font-size: 20px;
+    margin-bottom: 24px;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+.about-image-wrapper {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
+.timeline {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 30px;
+    color: #5a4c1e;
+    font-size: 18px;
+    line-height: 1.8;
+    border-left: 3px solid #d4af37;
+    padding-left: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeline li {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.timeline li::before {
+    content: '●';
+    position: absolute;
+    left: -13px;
+    color: #d4af37;
+    font-size: 18px;
+    top: 2px;
+}
+.contact-button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contact-button-container .btn {
+    background-color: #bfa06a;
+    color: white;
+    padding: 12px 28px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button-container .btn:hover {
+    background-color: #d4af37;
+    transform: scale(1.05);
+}
+
+.contact-button-container .btn:active {
+    transform: scale(0.95);
+}
+@media (max-width: 768px) {
+    .about-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-container h1 {
+        font-size: 28px;
+    }
+
+    .about-container p {
+        font-size: 17px;
+    }
+
+    .timeline {
+        font-size: 16px;
+    }
+
+    .contact-button-container .btn {
+        font-size: 16px;
+    }
+
+    .about-image {
+        max-height: 300px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
