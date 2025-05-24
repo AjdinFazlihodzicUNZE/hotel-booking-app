@@ -10,6 +10,8 @@ import Contactscreen from './screens/Contactscreen';
 function App() {
   return (
     <div className="App">
+      <div className="background-image"></div>
+      <div className="page-content">
       <Navbar/>
       <BrowserRouter>
         <Routes>
@@ -20,6 +22,7 @@ function App() {
           <Route path='/contact' exact Component={Contactscreen}/>
         </Routes>
       </BrowserRouter>
+    </div>
     </div>
   );
 }
