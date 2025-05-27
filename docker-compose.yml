@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=... # tvoje mongo uri
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npx nodemon server.js
+    depends_on:
+      - mongo
+
+  frontend:
+    build:
+      context: ./client  # ako ti je frontend u folderu client
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    command: npm start
+
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+

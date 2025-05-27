@@ -1,9 +1,9 @@
 import React from 'react';
 import './Featurecard.css';
 
-function Featurecard({ title, image, description }) {
+function Featurecard({ title, image, description, delay }) {
   return (
-    <div className="feature-card">
+    <div className="feature-card" style={{ animationDelay: delay }}>
       <img src={image} alt={title} className="feature-image" />
       <div className="overlay">
         <h3>{title}</h3>
@@ -12,5 +12,6 @@ function Featurecard({ title, image, description }) {
     </div>
   );
 }
+
 
 export default Featurecard;

@@ -32,7 +32,7 @@ function Homescreen() {
      {
           title: 'Restaurant',
           image: '/restaurant.jpg',
-          description: 'Enjoy exquisite dishes and a cozy atmosphere.'
+          description: 'Enjoy exquisite dishes and a cozy atmosphere.',
      },
     {
          title: 'Spa Center',
@@ -65,6 +65,7 @@ function Homescreen() {
                   title={feature.title}
                   image={feature.image}
                   description={feature.description}
+                  delay={`${index * 0.3}s`}
               />
               
             ))}
