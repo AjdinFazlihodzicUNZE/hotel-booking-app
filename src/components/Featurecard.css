@@ -1,19 +1,23 @@
 .feature-card {
   position: relative;
-  width: 250px;   /* manja širina */
-  height: 450px;  /* veća visina - izdužena vertikalno */
+  width: 250px;  
+  height: 450px;  
   margin: 12px;
   overflow: hidden;
   border-radius: 8px;
   cursor: pointer;
   box-shadow: none;
   margin-bottom: 70px;
+  cursor: default;
+  animation: fadeInCard 1s ease-out forwards;
+  opacity: 0;
+
 }
 
 .feature-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* popunjava karticu proporcionalno */
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -41,4 +45,14 @@
 
 .feature-card:hover .overlay {
   opacity: 1;
+}
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }

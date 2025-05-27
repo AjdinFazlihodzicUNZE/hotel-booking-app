@@ -112,12 +112,71 @@ h1{
   .welcome-text {
   font-size: 60px;
   font-weight: 700;
-  color: #d4af37; 
+  color: #d4af37;
   text-align: center;
-  margin: 40px 0 30px 0;
+  margin: 80px 0 30px 0;
   font-family: 'Georgia', serif;
-  text-shadow: 2px 2px 6px rgba(0, 0s, 0, 0.5);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeInCenter 2s ease-out forwards;
 }
+@media (max-width: 768px) {
+  .room-container {
+    padding: 0 10px;
+  }
+
+  .shadowbox {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .room-description {
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  .btn-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-luxury {
+    width: 100%;
+    max-width: 280px;
+    margin-top: 10px;
+  }
+
+  .smallimg {
+    height: 200px;
+  }
+
+  .bigimg {
+    max-height: 250px;
+  }
+
+  .welcome-text {
+    font-size: 32px;
+    padding: 0 10px;
+  }
+}
+
+@keyframes fadeInCenter {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
   
   
   
