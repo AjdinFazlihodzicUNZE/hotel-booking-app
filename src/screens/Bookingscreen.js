@@ -13,6 +13,13 @@ function Bookingscreen({ match }) {
   const [selectedDate, setSelectedDate] = useState('');
 
   useEffect(() => {
+
+  if (!localStorage.getItem('currentUser')) {
+  window.location.href = "/login";
+  return;
+}
+
+
     const fetchData = async () => {
       try {
         setloading(true);
