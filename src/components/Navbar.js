@@ -31,7 +31,7 @@ function Navbar() {
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="userMenu">
                                     <li>
-                                        <a className="dropdown-item" href="/home">Booking</a>
+                                        <a className="dropdown-item" href="/profile">Profile</a>
                                     </li>
                                     <li>
                                         <a className="dropdown-item" href="#" onClick={logout}>Log out</a>

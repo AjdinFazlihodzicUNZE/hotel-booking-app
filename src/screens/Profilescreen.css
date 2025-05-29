@@ -1,0 +1,118 @@
+/* Container za cijeli profil ekran */
+.profilescreen-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #fffdf8;
+  border: 1px solid #d4af37;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #8b6508;
+}
+
+/* Naslov "My Profile" i ostali h1 */
+.profilescreen-container h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: #8b6508;
+}
+
+/* Profilni podaci */
+.profile-info h1 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* Booking kartice */
+.bs {
+  background-color: #fffdf8;
+  border: 1px solid #d4af37;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  color: #8b6508;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+/* Hover efekat za booking kartice */
+.bs:hover {
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+  transform: translateY(-4px);
+}
+
+/* Booking naslov (ime sobe) */
+.bs h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* Booking detalji (p tagovi) */
+.bs p {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+/* Status tekst sa posebnim stilom za potvrđeno i otkazano */
+.bs p b {
+  font-weight: 700;
+}
+
+/* Dugme za otkazivanje */
+.luxury-button {
+  background-color: #bfa06a;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  float: right;
+  margin-top: 10px;
+}
+
+/* Hover efekat na dugme */
+.luxury-button:hover {
+  background-color: #d4af37;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Active efekat na dugme */
+.luxury-button:active {
+  transform: scale(0.95);
+}
+
+/* Responsive: prilagođavanje za manje ekrane */
+@media (max-width: 768px) {
+  .profilescreen-container {
+    padding: 20px 15px;
+    margin: 20px;
+  }
+
+  .bs {
+    padding: 15px;
+  }
+
+  .bs h1 {
+    font-size: 20px;
+  }
+
+  .bs p {
+    font-size: 14px;
+  }
+
+  .luxury-button {
+    width: 100%;
+    float: none;
+    margin-top: 15px;
+  }
+}

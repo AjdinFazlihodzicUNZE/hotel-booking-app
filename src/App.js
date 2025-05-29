@@ -9,6 +9,7 @@ import Loginscreen from './screens/Loginscreen';
 import Contactscreen from './screens/Contactscreen';
 import Footer from './components/Footer';
 import AboutUsscreen from './screens/AboutUsscreen';
+import Profilescreen from './screens/Profilescreen';
 
 
 
@@ -28,6 +29,7 @@ function App() {
            <Route path='/login' exact Component={Loginscreen} />
            <Route path='/contact' exact Component={Contactscreen} />
            <Route path='/about-us' exact Component={AboutUsscreen}/>
+           <Route path='/profile' exact Component={Profilescreen}/>
         </Routes>
     </div>
     <Footer />
