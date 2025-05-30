@@ -55,7 +55,7 @@ function Homescreen() {
     return (
         <div className="container">
           <div>
-              <h1 className="welcome-text">Welcome</h1>
+              <h1 className="welcome-text">Welcome to Hotel Royale</h1>
             </div>
             <div className="row justify-content-center mt-5">
               <div className="feature-cards-container mt-4 d-flex justify-content-center flex-wrap">
