@@ -3,6 +3,8 @@
     padding: 15px 50px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid #d4af37;
+    position: relative;
+  z-index: 1000;
 }
 
 .navbar-brand {
@@ -46,13 +48,24 @@
 }
 
 .dropdown-menu {
-    background-color: #fffdf8;
-    border: 1px solid #d4af37;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 0.5rem;
-    min-width: 160px;
-    padding: 0;
-}
+    display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1002;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  min-width: 150px;
+  }
+  
+  .nav-item.dropdown {
+    position: relative;
+    position: relative;
+  z-index: 1001;
+  }
+  
 
 .dropdown-item {
     color: #8b6508;
@@ -104,7 +117,9 @@
 .nav-link:hover .custom-arrow {
     transform: rotate(180deg);
 }
-
+.nav-item.dropdown.show .dropdown-menu {
+    display: block;
+  }
 
 @media (max-width: 991px) {
     .navbar {
