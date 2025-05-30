@@ -10,6 +10,7 @@ import Contactscreen from './screens/Contactscreen';
 import Footer from './components/Footer';
 import AboutUsscreen from './screens/AboutUsscreen';
 import Profilescreen from './screens/Profilescreen';
+import Adminscreen from './screens/Adminscreen';
 
 
 
@@ -30,6 +31,7 @@ function App() {
            <Route path='/contact' exact Component={Contactscreen} />
            <Route path='/about-us' exact Component={AboutUsscreen}/>
            <Route path='/profile' exact Component={Profilescreen}/>
+           <Route path='/admin' exact Component={Adminscreen} />
         </Routes>
     </div>
     <Footer />
