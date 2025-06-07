@@ -13,7 +13,7 @@ function Profilescreen() {
     if (!user) {
       window.location.href = "/login";
     }
-  }, []);
+  }, [user]);
 
   const items = [
     {
@@ -70,12 +70,12 @@ export function MyBookings() {
     };
 
     fetchBookings();
-  }, []);
+  }, [user._id]);
 
   async function cancelBooking(bookingid, roomid) {
     try {
       setloading(true);
-      const result = await (
+      await (
         await axios.post("/api/bookings/cancelbooking", { bookingid, roomid })
       ).data;
       setloading(false);

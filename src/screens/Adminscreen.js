@@ -5,8 +5,6 @@ import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Swal from "sweetalert2";
 
-const { TabPane } = Tabs;
-
 function Adminscreen() {
   useEffect(() => {
     if (!JSON.parse(localStorage.getItem("currentUser")).isAdmin) {

@@ -25,16 +25,29 @@ function Navbar() {
                         </li>
                         {user ? (
                             <li className="nav-item dropdown">
-                                <a className="nav-link" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button
+                                    className="nav-link btn btn-link"
+                                    id="userMenu"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    style={{ textDecoration: 'none' }}
+                                >
                                     Profile
                                     <span className="custom-arrow">&#9662;</span>
-                                </a>
+                                </button>
                                 <ul className="dropdown-menu" aria-labelledby="userMenu">
                                     <li>
                                         <a className="dropdown-item" href="/profile">Profile</a>
                                     </li>
                                     <li>
-                                        <a className="dropdown-item" href="#" onClick={logout}>Log out</a>
+                                        <button
+                                            className="dropdown-item"
+                                            onClick={logout}
+                                            style={{ border: 'none', background: 'none', cursor: 'pointer' }}
+                                            type="button"
+                                        >
+                                            Log out
+                                        </button>
                                     </li>
                                 </ul>
                             </li>

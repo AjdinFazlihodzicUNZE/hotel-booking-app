@@ -35,7 +35,7 @@ function Bookingscreen({ match }) {
     };
 
     fetchData();
-  }, []);
+  }, [roomid]);
 
   async function bookRoom(){
       const bookingDetails = {
@@ -47,7 +47,7 @@ function Bookingscreen({ match }) {
 
       }
       try {
-        const result = await axios.post('/api/bookings/bookroom', bookingDetails);
+        await axios.post('/api/bookings/bookroom', bookingDetails);
         alert("Successfully booked the room!");
       } catch (error) {
         console.log(error);
@@ -65,7 +65,7 @@ function Bookingscreen({ match }) {
 
             <div className='col-md-6'>
               <h1>{room.name}</h1>
-              <img src={room.imageurls[0]} className='bigimg' />
+              <img src={room.imageurls[0]} className='bigimg' alt="roomimg" />
               <b>
                 <p>Max count: {room.maxcount}</p>
                 <p>Phone Number: {room.phonenumber}</p>
