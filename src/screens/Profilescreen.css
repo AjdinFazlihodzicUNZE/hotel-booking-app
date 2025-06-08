@@ -109,3 +109,41 @@
     margin-top: 15px;
   }
 }
+
+.ant-tabs-nav {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+
+.ant-tabs-tab {
+  color: #8b6508 !important;
+  font-weight: 600 !important;
+  font-size: 16px;
+  padding: 12px 20px !important;
+  transition: all 0.3s ease;
+}
+
+
+.ant-tabs-tab:hover {
+  color: #d4af37 !important;
+}
+
+
+.ant-tabs-ink-bar {
+  background-color: #d4af37 !important;
+}
+
+
+.ant-tabs-tab-active {
+  color: #d4af37 !important;
+  font-weight: 700 !important;
+}
+.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #d4af37 !important;
+}
+.ant-tabs-tab-btn:focus {
+  outline: none !important;
+}
+.ant-tabs-tab.ant-tabs-tab-active:focus-visible {
+  box-shadow: none !important;
+}

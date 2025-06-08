@@ -134,6 +134,12 @@
     .dropdown-menu {
         text-align: center;
     }
+    .navbar-nav .nav-item.dropdown .btn-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    }
 }
 @keyframes navbarFadeIn {
   0% {

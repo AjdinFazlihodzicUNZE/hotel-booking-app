@@ -4,6 +4,7 @@ import axios from "axios";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Swal from "sweetalert2";
+import "./Adminscreen.css";
 
 function Adminscreen() {
   useEffect(() => {
@@ -13,7 +14,7 @@ function Adminscreen() {
   }, []);
 
   return (
-    <div className="mt-3 ml-3 bs">
+    <div className="admin-container mt-3 ml-3 bs">
       <h2 className="text-center" style={{ fontSize: "30px" }}>
         <b>Admin Panel</b>
       </h2>
@@ -77,8 +78,8 @@ export function Bookings() {
       <div className="col-md-12">
         <h1>Bookings</h1>
         {loading && <Loader />}
-
-        <table className="table table-bordered table-dark">
+        <div className="table-responsive">
+        <table className="table table-bordered table-hover">
           <thead className="bs">
             <tr>
               <th>Booking ID</th>
@@ -101,6 +102,7 @@ export function Bookings() {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );
@@ -133,8 +135,8 @@ export function Rooms() {
       <div className="col-md-12">
         <h1>Rooms</h1>
         {loading && <Loader />}
-
-        <table className="table table-bordered table-dark">
+        <div className="table-responsive">
+        <table className="table table-bordered table-hover">
           <thead className="bs">
             <tr>
               <th>Room ID</th>
@@ -159,6 +161,7 @@ export function Rooms() {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );
@@ -191,7 +194,8 @@ export function Users() {
       <div className="col-md-12">
         <h1>Users</h1>
         {loading && <Loader />}
-        <table className="table table-dark table-bordered">
+        <div className="table-responsive">
+        <table className="table table-hover table-bordered">
           <thead>
             <tr>
               <th>User ID</th>
@@ -212,6 +216,7 @@ export function Users() {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );
