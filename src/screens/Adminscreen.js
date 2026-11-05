@@ -223,8 +223,7 @@ export function Users() {
 //Add Room Component
 
 export function Addroom() {
-  const [loading, setloading] = useState(false);
-  const [error, seterror] = useState();
+  const [loading, setloading] = useState(false);g
   const [name, setname] = useState('');
   const [rentperday, setrentperday] = useState('');
   const [maxcount, setmaxcount] = useState('');
