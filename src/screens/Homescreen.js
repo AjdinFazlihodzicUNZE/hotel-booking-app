@@ -71,23 +71,27 @@ function Homescreen() {
             ))}
              </div>
 
-            {loading ? (
-  <Loader />
-) : rooms.length > 0 ? (
-  rooms.map(room => {
-    return (
-      <div className="col-md-9 mt-2" key={room._id}>
-        <Room room={room} />
-      </div>
-    );
-  })
-) : (
-  <Error />
-)}
+          {loading ? (
+              <Loader />
+            ) : error ? (
+              <Error message="Failed to load rooms. Please try again later." />
+            ) : rooms.length > 0 ? (
+              rooms.map((room) => {
+                return (
+                  <div className="col-md-9 mt-2" key={room._id}>
+                    <Room room={room} />
+                  </div>
+                );
+              })
+            ) : (
+              <div className="col-md-9 mt-2 text-center">
+                <h3>No rooms available at the moment.</h3>
+              </div>
+            )}
 
-            </div>
-        </div>
-    )
+  </div>
+</div>
+)
 }
 
 export default Homescreen

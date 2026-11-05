@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Tabs, Divider, Tag } from "antd";
 import axios from "axios";
 import Loader from "../components/Loader";
-import Error from "../components/Error";
 import Swal from "sweetalert2";
 import "./Profilescreen.css";
 
@@ -15,6 +14,9 @@ function Profilescreen() {
     }
   }, [user]);
 
+   if (!user) {
+    return null;
+  }
   const items = [
     {
       key: "1",
@@ -49,9 +51,9 @@ export function MyBookings() {
   const user = JSON.parse(localStorage.getItem("currentUser"));
   const [bookings, setbookings] = useState([]);
   const [loading, setloading] = useState(false);
-  const [error, seterror] = useState();
 
   useEffect(() => {
+    if (!user) return;
     const fetchBookings = async () => {
       try {
         setloading(true);
@@ -65,12 +67,11 @@ export function MyBookings() {
       } catch (error) {
         console.log(error);
         setloading(false);
-        seterror(error);
       }
     };
 
     fetchBookings();
-  }, [user._id]);
+  }, []);
 
   async function cancelBooking(bookingid, roomid) {
     try {

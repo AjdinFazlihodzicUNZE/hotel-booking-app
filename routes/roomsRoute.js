@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const Room = require('../models/room');
-const { message } = require("antd");
+
 
 router.get("/getallrooms", async(req,res) => {
     try {

@@ -9,10 +9,11 @@ function Bookingscreen({ match }) {
 
   const [room, setroom] = useState();
   const [loading, setloading] = useState(true);
-  const [error, seterror] = useState();
   const [selectedDate, setSelectedDate] = useState('');
 
-  useEffect(() => {
+   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+useEffect(() => {
 
   if (!localStorage.getItem('currentUser')) {
   window.location.href = "/login";
@@ -28,7 +29,6 @@ function Bookingscreen({ match }) {
         setroom(data);
         setloading(false);
       } catch (error) {
-        seterror(true);
         console.log(error);
         setloading(false);
       }
@@ -41,7 +41,7 @@ function Bookingscreen({ match }) {
       const bookingDetails = {
         room: room.name,
         roomid: room._id,
-        userid:JSON.parse(localStorage.getItem('currentUser'))._id,
+        userid:currentUser ? currentUser._id : '',
         date: selectedDate,
         rentperday: room.rentperday
 
@@ -79,7 +79,7 @@ function Bookingscreen({ match }) {
                 <h1>Booking details</h1>
                 <hr />
                 <b>
-                  <p>Name : {JSON.parse(localStorage.getItem('currentUser')).name}</p>
+                  <p>Name : {currentUser ? currentUser.name : ''}</p>
                   <p>Max Count : {room.maxcount}</p>
                   <div className="mb-3 text-end">
                     <label htmlFor="bookingDate" className="form-label" style={{ fontWeight: 'bold' }}>
