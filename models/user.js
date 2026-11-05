@@ -1,4 +1,4 @@
-const { MongoGCPError } = require("mongodb");
+
 const mongoose = require("mongoose");
 
 const userSchema = mongoose.Schema({
@@ -9,7 +9,8 @@ const userSchema = mongoose.Schema({
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     password: {
         type: String,

@@ -22,16 +22,16 @@ function App() {
       <div className="page-content">
      <Navbar />
      <div className="page-body">
-        <Routes>
+         <Routes>
            <Route path="/" element={<Navigate to="/home" replace />} />
            <Route path="/home" element={<Homescreen />} />
-           <Route path='/book/:roomid' element={<Bookingscreen />} />
-           <Route path='/register' exact Component={Registerscreen} />
-           <Route path='/login' exact Component={Loginscreen} />
-           <Route path='/contact' exact Component={Contactscreen} />
-           <Route path='/about-us' exact Component={AboutUsscreen}/>
-           <Route path='/profile' exact Component={Profilescreen}/>
-           <Route path='/admin' exact Component={Adminscreen} />
+           <Route path="/book/:roomid" element={<Bookingscreen />} />
+           <Route path="/register" element={<Registerscreen />} />
+           <Route path="/login" element={<Loginscreen />} />
+           <Route path="/contact" element={<Contactscreen />} />
+           <Route path="/about-us" element={<AboutUsscreen />} />
+           <Route path="/profile" element={<Profilescreen />} />
+           <Route path="/admin" element={<Adminscreen />} />
         </Routes>
     </div>
     <Footer />

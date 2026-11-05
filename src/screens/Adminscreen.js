@@ -2,16 +2,21 @@ import React, { useState, useEffect } from "react";
 import { Tabs } from "antd";
 import axios from "axios";
 import Loader from "../components/Loader";
-import Error from "../components/Error";
 import Swal from "sweetalert2";
 import "./Adminscreen.css";
 
 function Adminscreen() {
+
+  const user = JSON.parse(localStorage.getItem("currentUser"));
   useEffect(() => {
-    if (!JSON.parse(localStorage.getItem("currentUser")).isAdmin) {
+    if (!user || !user.isAdmin) {
       window.location.href = "/home";
     }
-  }, []);
+  }, [user]);
+
+  if (!user || !user.isAdmin) {
+    return null; 
+  }
 
   return (
     <div className="admin-container mt-3 ml-3 bs">
@@ -49,24 +54,21 @@ function Adminscreen() {
 
 export default Adminscreen;
 
-//Booking list components
-
 export function Bookings() {
   const [bookings, setbookings] = useState([]);
   const [loading, setloading] = useState(true);
-  const [error, seterror] = useState();
+
   useEffect(() => {
     async function fetchData() {
       try {
         const data = await (
-          await axios.get("api/bookings/getallbookings")
+          await axios.get("/api/bookings/getallbookings")
         ).data;
         setbookings(data);
         setloading(false);
       } catch (error) {
         console.log(error);
         setloading(false);
-        seterror(error);
       }
     }
 
@@ -113,17 +115,15 @@ export function Bookings() {
 export function Rooms() {
   const [rooms, setrooms] = useState([]);
   const [loading, setloading] = useState(true);
-  const [error, seterror] = useState();
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await (await axios.get("api/rooms/getallrooms")).data;
+        const data = await (await axios.get("/api/rooms/getallrooms")).data;
         setrooms(data);
         setloading(false);
       } catch (error) {
         console.log(error);
         setloading(false);
-        seterror(error);
       }
     }
 
@@ -172,17 +172,15 @@ export function Rooms() {
 export function Users() {
   const [users, setusers] = useState([]);
   const [loading, setloading] = useState(true);
-  const [error, seterror] = useState();
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await (await axios.get("api/users/getallusers")).data;
+        const data = await (await axios.get("/api/users/getallusers")).data;
         setusers(data);
         setloading(false);
       } catch (error) {
         console.log(error);
         setloading(false);
-        seterror(error);
       }
     }
 
@@ -231,7 +229,7 @@ export function Addroom() {
   const [rentperday, setrentperday] = useState('');
   const [maxcount, setmaxcount] = useState('');
   const [description, setdescription] = useState('');
-  const [phonenumber, setphonenumer] = useState('');
+  const [phonenumber, setphonenumber] = useState('');
   const [type, settype] = useState('');
   const [imageurl1, setimageurl1] = useState('');
   const [imageurl2, setimageurl2] = useState('');
@@ -250,11 +248,11 @@ export function Addroom() {
 
     try {
       setloading(true);
-      const result = await (await axios.post('api/rooms/addroom', newroom)).data
+      const result = await (await axios.post('/api/rooms/addroom', newroom)).data
       console.log(result)
       setloading(false)
       Swal.fire('Congrats', 'Your New Room Added Successfully', 'success').then(result=>{
-        window.location.href='home'
+        window.location.href='/home'
       })
     } catch (error) {
       console.log(error)
@@ -310,7 +308,7 @@ export function Addroom() {
           placeholder="Phone Number"
           value={phonenumber}
           onChange={(e) => {
-            setphonenumer(e.target.value);
+            setphonenumber(e.target.value);
           }}
         />
       </div>

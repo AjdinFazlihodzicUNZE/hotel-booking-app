@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navbar.css';
-
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     const user = JSON.parse(localStorage.getItem('currentUser'));
@@ -11,17 +11,17 @@ function Navbar() {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-animated">
-                <a className="navbar-brand" href="/home">Hotel Royale</a>
+                 <Link className="navbar-brand" to="/home">Hotel Royale</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="/about-us">About Us</a>
+                            <Link className="nav-link" to="/about-us">About Us</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/contact">Contact</a>
+                            <Link className="nav-link" to="/contact">Contact</Link>
                         </li>
                         {user ? (
                             <li className="nav-item dropdown">
@@ -32,13 +32,18 @@ function Navbar() {
                                     aria-expanded="false"
                                     style={{ textDecoration: 'none' }}
                                 >
-                                    Profile
+                                    {user.name}
                                     <span className="custom-arrow">&#9662;</span>
                                 </button>
                                 <ul className="dropdown-menu" aria-labelledby="userMenu">
                                     <li>
-                                        <a className="dropdown-item" href="/profile">Profile</a>
+                                        <Link className="dropdown-item" to="/profile">Profile</Link>
                                     </li>
+                                    {user.isAdmin && (
+                                        <li>
+                                            <Link className="dropdown-item" to="/admin">Admin Panel</Link>
+                                        </li>
+                                    )}
                                     <li>
                                         <button
                                             className="dropdown-item"
@@ -54,10 +59,10 @@ function Navbar() {
                         ) : (<>
 
                             <li className="nav-item">
-                                <a className="nav-link" href="/login">Log in</a>
+                                <Link className="nav-link" to="/login">Log in</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/register">Sign up</a>
+                                <Link className="nav-link" to="/register">Sign up</Link>
                             </li>
 
                         </>)}
